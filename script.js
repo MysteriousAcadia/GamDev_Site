@@ -36,8 +36,8 @@ bx = by = 50;
 var xv = 6, yv = 6;
 var bd = 15;
 var dy;
-var aiSpeed = 2;
-var pspeed = 3;
+var aiSpeed = 4;
+var pspeed = 6;
 var ph=220;
 var s1=0, s2=0;
 
