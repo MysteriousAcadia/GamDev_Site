@@ -3,7 +3,7 @@ body{
     font-family: Roboto;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 2000px) {
     .product {
       height: auto;
       flex-direction: column-reverse;
@@ -24,7 +24,7 @@ body{
 
 .home{
     height: 100vh;
-    background: #020a17;
+    background:url('./img/3156605.jpg');
     display: flex;
     align-items: center;
     justify-content: flex-start;
