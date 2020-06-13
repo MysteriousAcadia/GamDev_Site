@@ -86,6 +86,27 @@ body{
 
 .key{
     color: white;
+    position: relative;
+}
+
+.key::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: white;
+    transition: all 0.33s ease-in-out;
+}
+
+.key:hover::before{
+    width: 100%;
+}
+
+.key > a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .button{
