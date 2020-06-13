@@ -34,15 +34,30 @@ var ctx = canvas.getContext('2d');
 var py, ay, px, bx, by;
 bx = by = 50;
 var xv = 6, yv = 6;
-var bd = 15;
+var bd;
 var dy;
-var aiSpeed = 4;
-var pspeed = 6;
-var ph=220;
+var aiSpeed = 2;
+var pspeed = 3;
+var ph;
 var s1=0, s2=0;
+var thic;
+
+let mq = window.matchMedia( "(max-width: 700px)" );
+if(mq.matches == true) {
+    thic = 10;
+    ph = 160;
+    bd=10;
+}
+else{
+  thic = 20;
+  ph = 220;
+  bd=15;
+}
 
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
+
+console.log(thic);
 
 py = 0;
 ay = canvas.height/2;
@@ -138,8 +153,8 @@ function update(){
 ctx.fillRect(0,0,canvas.width,canvas.height);
   
   ctx.fillStyle = '#fff';
-  ctx.fillRect(0, py, 20, ph);
-  ctx.fillRect(canvas.width - 20, ay, 20, ph);
+  ctx.fillRect(0, py, thic, ph);
+  ctx.fillRect(canvas.width - thic, ay, thic, ph);
   ctx.fillRect(bx-bd/2,by,bd,bd);
 
   ctx.fillStyle = '#eee';
@@ -163,7 +178,7 @@ $(window).on('scroll', function(){
     $('.product').each(function(){
         var element = $(this)[0];
 
-        if(element.getBoundingClientRect().top <= $(window).height() / 4) {
+        if(element.getBoundingClientRect().top <= $(window).height() / 8) {
 			$(element).children().css('opacity', '1').css('margin', '0 2rem');
 		}
     });
@@ -171,7 +186,7 @@ $(window).on('scroll', function(){
     $('.product2').each(function(){
         var element = $(this)[0];
 
-        if(element.getBoundingClientRect().top <= $(window).height() / 4) {
+        if(element.getBoundingClientRect().top <= $(window).height() / 8) {
             $(element).children().css('opacity', '1').css('margin', '0 2rem');
          }
      });
