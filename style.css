@@ -3,51 +3,6 @@ body{
     font-family: Roboto;
 }
 
-@media only screen and (max-width: 2000px) {
-    .product {
-      height: auto;
-      flex-direction: column-reverse;
-      padding: 7rem 0;
-    }
-
-    .product2 {
-        height: auto;
-        flex-direction: column;
-        padding: 7rem 0;
-    }
-
-    .product2 > *{
-        margin: 0 2rem;
-        opacity: 1;
-    }
-    .about_us_area {
-        position: relative;
-    }
-
-    .about_content {
-        position: relative;
-    }
-    .align-items-center {
-        -ms-flex-align: center !important;
-        align-items: center !important
-    }
-
-    .about_content:before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 89%;
-        top: 0;
-        left: 0;
-        background: -webkit-linear-gradient(to right, #231a60 0%, #3c338d 51%, #231a60 100%);
-        background: -moz-linear-gradient(to right, #231a60 0%, #3c338d 51%, #231a60 100%);
-        background: -ms-linear-gradient(to right, #231a60 0%, #3c338d 51%, #231a60 100%);
-        background: -o-linear-gradient(to right, #231a60 0%, #3c338d 51%, #231a60 100%);
-        background: linear-gradient(to right, #231a60 0%, #3c338d 51%, #231a60 100%);
-    }
-
-}
-
 .home{
     height: 100vh;
     background:url('./img/home-banner.jpg');
@@ -56,6 +11,29 @@ body{
     justify-content: flex-start;
     color: white;
     transition: all 1s ease;
+    position: relative;
+    overflow-x:hidden;
+    background-image: url('img/homepic.jpg');
+    background-attachment: fixed;
+}
+
+.home::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #020a17;
+    opacity: 0.6;
+}
+
+.bluebody{
+    position: absolute;
+    top:0;
+    height: 100vh;
+    width: 100vw;
+    background: #020a17;
+    z-index: 1000;
 }
 
 .logo{
@@ -67,7 +45,7 @@ body{
     z-index: 200;
 }
 
-.nav{
+/* .nav{
     height: 4rem;
     width: 100%;
     position: sticky;
@@ -76,7 +54,7 @@ body{
     top: 0;
     display: flex;
     align-items: center;
-}
+} */
 
 .nav-text{
     color: white;
@@ -89,7 +67,7 @@ body{
 
 .text-container{
     text-align: left;
-    padding: 8rem;
+    padding: 5rem;
     z-index: 100;
 }
 
@@ -166,12 +144,12 @@ body{
 
 .info{
     height: 30rem;
-    width: 30rem;
     display: flex;
     flex-direction: column;
     padding: 0 1.5rem;
     opacity: 0;
     transition: all 0.4s ease-in-out;
+    position: relative;
 }
 
 
@@ -227,4 +205,119 @@ i:hover{
 .awesome-contain > *{
     margin: 0 1rem;
     color: #020a17;
+}
+
+.coolBtn, .coolBtn2{
+    color: #020a17;
+    text-decoration: none;
+    border: 2px solid #020a17;
+    padding: 1rem 3rem;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.btnContain{
+    display: inline-block;
+    margin: 2rem 0;
+}
+
+.coolBtn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: #020a17;
+    transition: all 0.25s ease-in-out;
+    width: 0;
+    z-index: -1;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.coolBtn:hover::before{
+    width: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.coolBtn:hover{
+    color: white;
+}
+
+.coolBtn2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #020a17;
+    transition: all 0.25s ease-in-out;
+    width: 0;
+    z-index: -1;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.coolBtn2:hover::before{
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.coolBtn2:hover{
+    color: white;
+}
+
+@media (max-width: 1000px) {
+    .product {
+      height: auto;
+      flex-direction: column-reverse;
+      padding: 3rem;
+    }
+
+    .product2 {
+        height: auto;
+        flex-direction: column;
+        padding: 3rem;
+    }
+
+    .info{
+        position: relative;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 800px){
+    .heading{
+        width: 80vw;
+    }
+
+    .text-container > h2{
+        width: 80vw;
+    }
+
+    .text-container{
+        margin: auto;
+        padding: 0;
+    }
+}
+
+@media (max-width: 500px){
+    .info > p{
+        width: 80vw;
+    }
+
+    .product > img{
+        width: 80vw;
+    }
+
+    .product2 > img{
+        width: 80vw;
+    }
 }
