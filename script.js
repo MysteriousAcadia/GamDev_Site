@@ -34,7 +34,7 @@ var ctx = canvas.getContext('2d');
 var py, ay, px, bx, by;
 bx = by = 50;
 var xv = 6, yv = 6;
-var bd;
+var bd = 15;
 var dy;
 var aiSpeed = 2;
 var pspeed = 3;

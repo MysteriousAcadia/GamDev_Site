@@ -376,4 +376,8 @@ i:hover{
     .wizPic{
         height: 15rem;
     }
+
+    .logo{
+        visibility: hidden;
+    }
 }
