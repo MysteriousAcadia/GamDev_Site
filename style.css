@@ -273,10 +273,33 @@ i:hover{
 
 .dev{
     font-weight: 600;
+    position: relative;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.dev::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: #020a17;
+    transition: all 0.33s ease-in-out;
+}
+
+.dev:hover::before{
+    width: 100%;
 }
 
 .wizPic{
     height: 20rem;
+}
+
+.dev > a{
+    text-decoration: none;
+    color: inherit;
 }
 
 @media (max-width: 1000px) {
